@@ -13,10 +13,33 @@ const prompts = [
 // The user launches the application in the terminal and is presented with the 
 inquirer
     .prompt(prompts[0])
-    .then((answers) => {
-        console.log(answers)
+    .then((answer) => {
+        // console.log(answer)
+        // This switch case collects the users input and launches each function
+        switch (answer) {
+            case 'Add Employee':
+                // add functions to prompt new inquirer
+            break;
+            case 'Update Employee Role':
+                // 
+            break;
+            case 'View All Roles':
+                // 
+            break;
+            case 'Add Role':
+                // 
+            break;
+            case 'View All Departments':
+                // console.log(answer);
+                // 
+            break;
+            case 'Add Department':
+                // 
+            break;
+            case 'Quit':
+                // 
+            break;
+        }
     })
-// the user is presented with an inquirer prompt asking what they would like to do with the list of employees
-
 // The users selected option then is displayed in the console as a table
 
