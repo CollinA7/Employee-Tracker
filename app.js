@@ -1,6 +1,7 @@
 const cTable = require('console.table');
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
+const db = require('./db/connection');
 
 // This is the array of inquirer prompts
 const prompts = [
@@ -40,6 +41,4 @@ inquirer
                 // 
             break;
         }
-    })
-// The users selected option then is displayed in the console as a table
-
+})
