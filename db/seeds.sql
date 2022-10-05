@@ -1,6 +1,6 @@
 -- INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
 -- VALUES
---     (1, "Charles", "Smith", 1, NULL);
+--     (1, "Charles", "Smith", 1, NULL),
 --     (2, 'Samuel', 'Delany', 3, 1),
 --     (3, 'Tony', 'Duvert', 3, 20),
 --     (4, 'Dennis', 'Cooper', 2, 1),
@@ -16,10 +16,10 @@
 --     (14, 'Arnold', 'Bennett', 3, 1),
 --     (15, 'Algernon', 'Blackwood', 1, 1),
 --     (16, 'Rhoda', 'Broughton', 4, 20),
---     (17,'Hart', 'Crane', 2, 1),
+--     (17, 'Hart', 'Crane', 2, 1),
 --     (18, 'Vitorio', 'DeSica', 3, 9),
---     (19'Wilkie', 'Collins', 2, 9),
---     (20'Elizabeth', 'Gaskell', 1, NULL)
+--     (19, 'Wilkie', 'Collins', 2, 9),
+--     (20, 'Elizabeth', 'Gaskell', 1, NULL);
 
 INSERT INTO department (id, name)
 VALUES 
@@ -36,4 +36,4 @@ VALUES
     (4, 'Software Enginneer', 100000, 2),
     (5, 'Account Manager', 120000, 3),
     (6, 'Accountant', 130000, 3),
-    (7, 'Lawyer', 1000000, 4)
+    (7, 'Lawyer', 1000000, 4);
