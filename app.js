@@ -25,12 +25,24 @@ const addDepPrompt = [
     }
 ];
 
-const addRolePrompt = [
-    {
-        type: 'input',
-        name: ''
-    }
-];
+// const addRolePrompt = [
+//     {
+//         type: 'input',
+//         name: 'title',
+//         message: "What is the name for this role?"
+//     },
+//     {
+//         type: 'input',
+//         name: 'salary',
+//         message: "what is the salary of the rol?"
+//     },
+//     {
+//         type: 'list',
+//         name: 'department_id',
+//         message: 'What department does this role belong to?',
+//         choices: ["Sales","Engineering", "Finance", "Legal"]
+//     }
+// ];
 
 
 // The user launches the application in the terminal and is presented with the 
@@ -56,7 +68,7 @@ const mainFunction = () => {
                 showRoles();
             break;
             case 'Add Role':
-                addRole();
+                // addRole();
             break;
             case 'View All Departments':
                 console.log('Displaying all departments');
@@ -144,5 +156,28 @@ const addDepartment = function() {
                 })
     });
 };
+
+// const addRole = function() {
+//     inquirer
+//     .prompt(addRolePrompt)
+//     .then((answer) => {
+//         console.log(answer.title);
+//         console.log(answer.salary);
+//         console.log(answer.department_id);
+//     db.query(
+//         `INSERT INTO role (title, salary, department_id) VALUES ("${answer.title}", ${answer.salary}, ${answer.department_id});`,
+//         function (err, result, fields) {
+//             if (err) {
+//                 console.log(err)
+//             }
+//             console.log(
+//             `
+//             -------------------------
+//             `)
+//             showDepartment();
+//         })
+//     })
+
+// }
 
 mainFunction();
