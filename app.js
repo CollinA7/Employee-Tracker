@@ -13,15 +13,10 @@ const initPrompt = [
 ];
 
 const addDepPrompt = [
-    { 
-        type: 'input',
-        name: 'id',
-        message: "What is the role ID?"
-    },
     {
         type: 'input',
         name: 'name',
-        message: 'What is the name of the role?'
+        message: 'What is the name of the department?'
     }
 ];
 
@@ -139,19 +134,15 @@ const addDepartment = function() {
     inquirer
     .prompt(addDepPrompt)
     .then((answer) => {
-        console.log(answer.id);
-        console.log(answer.name);
+        // console.log(answer.id);
+        // console.log(answer.name);
         
         db.query(
-            `INSERT INTO department (id, name) VALUES (${answer.id}, "${answer.name}")`,
+            `INSERT INTO department (name) VALUES ("${answer.name}")`,
                 function (err, result, fields) {
                     if (err) {
                         console.log(err)
                     }
-                    console.log(
-                    `
-                    -------------------------
-                    `)
                     showDepartment();
                 })
     });
