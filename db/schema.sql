@@ -15,15 +15,15 @@ CREATE TABLE role (
     FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
--- CREATE TABLE employee (
---     id INT PRIMARY KEY,
---     first_name VARCHAR(30) NOT NULL,
---     last_name VARCHAR(30) NOT NULL,
---     role_id INT,
---     manager_id INT,
---     CONSTRAINTFOREIGN KEY (role_id) REFERENCES role(id),
---     CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id)
--- );
+CREATE TABLE employee (
+    id INT PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT,
+    manager_id INT,
+    CONSTRAINT FOREIGN KEY (role_id) REFERENCES role(id),
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id)
+);
 
 -- source db/db.sql;
 -- source db/schema.sql;

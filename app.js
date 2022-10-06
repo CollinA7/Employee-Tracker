@@ -25,6 +25,10 @@ const addDepPrompt = [
     }
 ];
 
+const addRolePrompt = [
+    
+];
+
 
 // The user launches the application in the terminal and is presented with the 
 const mainFunction = () => {
@@ -47,7 +51,7 @@ const mainFunction = () => {
                 showRoles();
             break;
             case 'Add Role':
-            
+                addRole();
             break;
             case 'View All Departments':
                 console.log('Displaying all departments');
