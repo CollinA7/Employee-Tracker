@@ -8,7 +8,7 @@ const initPrompt = [
     {
         type: 'list',
         name: 'frontPage',
-        choices: ['Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department', 'Quit']
+        choices: ['Add Employee', 'Update Employee Role', 'View all employees', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department', 'Quit']
     }
 ];
 
@@ -26,7 +26,10 @@ const addDepPrompt = [
 ];
 
 const addRolePrompt = [
-    
+    {
+        type: 'input',
+        name: ''
+    }
 ];
 
 
@@ -38,6 +41,9 @@ const mainFunction = () => {
         // console.log(answer.frontPage)
         // This switch case collects the users input and launches each function
         switch (answer.frontPage) {
+            case 'View all employees':
+                showEmployees();
+            break;
             case 'Add Employee':
 
             break;
@@ -47,7 +53,6 @@ const mainFunction = () => {
             case 'View All Roles':
                 console.log('Showing all roles');
                 console.log('---------------------');
-
                 showRoles();
             break;
             case 'Add Role':
@@ -77,13 +82,28 @@ const showDepartment = function() {
         console.log(
         `
         ------------------------------
-        `
-        )
+        `)
         console.table(results)
         mainFunction();
         }
     );
     
+};
+const showEmployees = function() {
+    db.query(
+        `SELECT * FROM employee;`,
+        function(err, result, fields) {
+            if (err) {
+                console.log(err)
+            }
+            console.log(
+            `
+            ---------------------------
+            `)
+            console.table(result);
+        }
+        );
+    mainFunction();
 };
 
 const showRoles = function() {
@@ -96,8 +116,7 @@ const showRoles = function() {
             console.log(
             `
             ---------------------------
-            `
-            )
+            `)
             console.table(result);
         }
     );
@@ -117,7 +136,10 @@ const addDepartment = function() {
                     if (err) {
                         console.log(err)
                     }
-                    console.log('-------------------------')
+                    console.log(
+                    `
+                    -------------------------
+                    `)
                     showDepartment();
                 })
     });
